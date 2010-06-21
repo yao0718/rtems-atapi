@@ -1,0 +1,27 @@
+This is a list of common commands I run for this test code:
+
+pc586-static:
+ /opt/work/sw/rtems/app/rfs/configure --host=i386-rtems4.10
+  --prefix=/local/ccj/rtems/4.10 --enable-rtemsbsp=pc586
+  --enable-maintainer-mode --disable-flashdisk --enable-networking=static
+
+pc586:
+ /opt/work/sw/rtems/app/rfs/configure --host=i386-rtems4.10
+  --prefix=/local/ccj/rtems/4.10 --enable-rtemsbsp=pc586 --enable-maintainer-mode
+  --disable-flashdisk --enable-networking=dhcp
+
+emacs-pc386-compile:
+ make -C /local/ccj/rtems/apps/rfs/pc386 && \
+  cp /local/ccj/rtems/apps/rfs/pc386/filesystem-test /opt/work/sw/ul/nasa/filesystem-test
+
+emac-gdb:
+ i386-rtems4.10-gdb --annotate=3 /local/ccj/rtems/apps/rfs/pc386-static/filesystem-test
+
+bsp-pc586:
+ /opt/work/sw/rtems/src/head/configure --target=i386-rtems4.10
+  --prefix=/local/ccj/rtems/4.10 BSP_PRESS_KEY_FOR_RESET=0
+  --enable-rtemsbsp=pc586 --enable-tests=samples --enable-cxx --enable-maintainer-mode
+
+qemu:
+ qemu -m 128 -boot a -fda /opt/work/sw/rtems/qemu/rtems-boot.img -hda hda.img \
+ -hdb fat:qemu -no-reboot -serial stdio -s -S

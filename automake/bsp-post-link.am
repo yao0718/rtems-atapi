@@ -1,0 +1,8 @@
+##
+## $Id$
+##
+
+DOWNEXT=.ralf
+
+%$(DOWNEXT): %$(EXEEXT)
+	$(bsp-post-link)

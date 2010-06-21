@@ -1,0 +1,28 @@
+This file lists the changes made to the NetBSD headers
+
+-- ata.c --
+removed panic()-409
+removed CF_ATTACH
+
+-- atareg.h --
+Removed Panic
+
+-- device.h --
+Removed Properties Dictionary
+
+-- intr.h --
+defined splnet
+
+-- conf.h --
+added seltrue and enodev definition
+
+-- pmf.h --
+updated the pmf_qual_t definition
+
+-- pool.h --
+Removed ipl_cookie kmutex_t kcondvar pool_cache_cpu_t
+
+-- quirk.h -- 
+changed aprint_normal declaration.
+-- NOTES --
+Remove "sys/errno.h"; using rtems one.
