@@ -1,0 +1,1 @@
+This project is a Google Summer of Code 2010 project for RTEMS, It aims to provide RTEMS with a new Disk Driver that supports recent ATAPI and SATA standards. This project will port the NetBSD disk driver to RTEMS. NetBSD driver is a license compliant and already verified driver that presents itself has a good option to be the new RTEMS disk driver.
